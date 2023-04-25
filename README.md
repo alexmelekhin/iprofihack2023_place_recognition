@@ -4,6 +4,27 @@
 
 ### ITLP-Campus
 
+Датасет записан на робототехнической платформе Husky на территории кампуса МФТИ и состоит из 5 треков, записанных в разное время суток (день/сумерки/ночь) и разные времена года (зима/весна).
+
+Для обучения предлагается использовать зимние треки (день/сумерки/ночь), а весенние (день/ночь) будут выданы для финального тестирования.
+
+Данные разделены по трекам, длина одного трека порядка 3 км, каждый трек включает в себя порядка $600$ фреймов. Расстояние между соседними фреймами ~5 м. Каждый фрейм включает в себя:
+
+- LiDAR -ный скан
+- RGB изобрадения для 2х камер (front/back)
+- Семантические маски для изображений каждой камеры
+- Текстовое описание для изображений каждой камеры
+- 6 DoF позу робота
+
+Подробнее про формат данных и структуру датасета см. [itlp_campus_dataset.md](docs/itlp_campus_dataset.md).
+
+Данные можно найти/использовать на следующих ресурсах:
+- [Яндекс.Диск](https://disk.yandex.ru/d/AIAHtZkuRf08TQ)
+- [Kaggle](https://www.kaggle.com/datasets/creatorofuniverses/itlp-campus-dataset-public)
+- [Google Drive]()
+
+sha256: `f59cf87bb0ea380431c9dc889cc49d32dd1e985b8c4700b7155629cca34d5da6` public.zip
+
 Видео-демонстрации треков датасета (публичная часть):
 - [2023-02-10-08-04-19-twilight](https://drive.google.com/file/d/1GcJ4jBFuT-Cr4MUTuZaqmX7WDgMNLLJ9/view?usp=share_link)
 - [2023-02-21-07-28-58-day](https://drive.google.com/file/d/1BbbCDUx6DnWKaCIgaqZ0Vj9A4-D9WD4Q/view?usp=share_link)
@@ -11,9 +32,24 @@
 
 ### Oxford RobotCar
 
+
+Данные можно найти/использовать на следующих ресурсах:
+- [Яндекс.Диск](https://disk.yandex.ru/d/0qq9cnrhlzU8Qg)
+- [Kaggle](https://www.kaggle.com/datasets/creatorofuniverses/oxfordrobotcar-iprofi-hack-23)
+- [Google Drive]()
+
+sha256: `25c45eed9ce77a3a4ab9828754fb1945c358c34d67cc241d47ea0c61d236a620` pnvlad_oxford_robotcar.zip
+
 todo
 
 ### NCLT
+
+Данные можно найти/использовать на следующих ресурсах:
+- [Яндекс.Диск](https://disk.yandex.ru/d/9wjyWKkWXe0vDQ)
+- [Kaggle](https://www.kaggle.com/datasets/creatorofuniverses/nclt-iprofi-hack-23)
+- [Google Drive]()
+
+sha256: `6ca5dc27d4928b1cbe6c1959b87a539f1dd9bc1764220c53b6d5e406e8cef310` NCLT_preprocessed_small.zip
 
 todo
 
