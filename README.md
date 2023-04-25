@@ -1,5 +1,9 @@
 # Хакатон "Распознай своё место на Физтехе"
 
+Данный репозиторий содержит базовое решение и вспомогательные скрипты для задачи "Распознай своё место на Физтехе" хакатона образовательного форума по искусственному интеллекту, математике и физике 2023.
+
+Презентация задачи доступна по [ссылке](https://docs.google.com/presentation/d/1QH5g8M8Fifn-zSt3_v-uAt8VtCKu9DZHzkLvHWNq1CU/edit?usp=sharing).
+
 ## Датасеты
 
 ### ITLP-Campus
@@ -21,7 +25,7 @@
 Данные можно найти/использовать на следующих ресурсах:
 - [Яндекс.Диск](https://disk.yandex.ru/d/AIAHtZkuRf08TQ)
 - [Kaggle](https://www.kaggle.com/datasets/creatorofuniverses/itlp-campus-dataset-public)
-- [Google Drive]()
+- [Google Drive](https://drive.google.com/file/d/1EdOTVgBJxsNUMecne7Fs4obJdJnDuJ18/view?usp=share_link)
 
 sha256: `f59cf87bb0ea380431c9dc889cc49d32dd1e985b8c4700b7155629cca34d5da6` public.zip
 
@@ -32,26 +36,21 @@ sha256: `f59cf87bb0ea380431c9dc889cc49d32dd1e985b8c4700b7155629cca34d5da6` publi
 
 ### Oxford RobotCar
 
-
 Данные можно найти/использовать на следующих ресурсах:
 - [Яндекс.Диск](https://disk.yandex.ru/d/0qq9cnrhlzU8Qg)
 - [Kaggle](https://www.kaggle.com/datasets/creatorofuniverses/oxfordrobotcar-iprofi-hack-23)
-- [Google Drive]()
+- [Google Drive](https://drive.google.com/file/d/1b2ry0PGa3vnl8gVhEWqRz329y_ekZX9C/view?usp=share_link)
 
 sha256: `25c45eed9ce77a3a4ab9828754fb1945c358c34d67cc241d47ea0c61d236a620` pnvlad_oxford_robotcar.zip
-
-todo
 
 ### NCLT
 
 Данные можно найти/использовать на следующих ресурсах:
 - [Яндекс.Диск](https://disk.yandex.ru/d/9wjyWKkWXe0vDQ)
 - [Kaggle](https://www.kaggle.com/datasets/creatorofuniverses/nclt-iprofi-hack-23)
-- [Google Drive]()
+- [Google Drive](https://drive.google.com/file/d/192lAPesNgIwbTe9GNqRH0cr9W8Mm16Dv/view?usp=share_link)
 
 sha256: `6ca5dc27d4928b1cbe6c1959b87a539f1dd9bc1764220c53b6d5e406e8cef310` NCLT_preprocessed_small.zip
-
-todo
 
 ## Базовое решение
 
@@ -60,15 +59,15 @@ todo
 Базовое решение использует библиотеку [Open Place Recognition](https://github.com/alexmelekhin/open_place_recognition), в которой на текущий момент реализована модель MinkLoc++ и классы для работы с датасетами [Oxford RobotCar](https://robotcar-dataset.robots.ox.ac.uk/), [NCLT](http://robots.engin.umich.edu/nclt/) и **ITLP-Campus**.
 
 Предлагаемые варианты установки зависимостей для работы с кодом:
-- Воспользоваться предложенным ноутбуком, в котором продемонстрирован процесс установки зависимостей в Google Colab;
+- Воспользоваться предложенным [ноутбуком](./baseline_demo.ipynb), в котором продемонстрирован процесс установки зависимостей в Google Colab;
 - Воспользоваться docker-образом и инструкциями из [репозитория библиотеки Open Place Recognition](https://github.com/alexmelekhin/open_place_recognition).
 - Установить зависимости в свое окружение вручную, воспользовавшись рекомендациями ниже.
 
 #### Ручная установка
 
-Код базового решения разрабатывался и тестировался на Ubuntu 20.04 с CUDA 11.6, PyTorch 1.13.1 и MinkowskiEngine ...
+Код базового решения разрабатывался и тестировался на Ubuntu 20.04 с CUDA 11.6, PyTorch 1.13.1 и MinkowskiEngine 0.5.4
 
-1. Установите PyTorch, воспользовавшись [официальными инструкциями](https://pytorch.org/get-started/previous-versions/)
+1. Установите PyTorch ~= 1.13.1, воспользовавшись [официальными инструкциями](https://pytorch.org/get-started/previous-versions/)
 2. Установите MinkowskiEngine (https://github.com/NVIDIA/MinkowskiEngine):
    ```bash
    # необходимые библиотеки
@@ -80,7 +79,7 @@ todo
                           --install-option="--force_cuda" \
                           --install-option="--blas=openblas"
    ```
-   Если последняя команда возвращает ошибку, то у вас новая версия pip, где `--install-option` переименовали в `--global-option`:
+   Если последняя команда возвращает ошибку, то у вас новая версия pip, где `--install-option` необходимо заменить на `--global-option`:
    ```bash
    pip install -U git+https://github.com/NVIDIA/MinkowskiEngine -v --no-deps \
                           --global-option="--force_cuda" \
@@ -100,3 +99,9 @@ from opr.models import minkloc_multimodal
 
 baseline_model = minkloc_multimodal(weights="path_to_checkpoint")
 ```
+
+### Запуск
+
+Демонстрация работы с базовым кодом приведена в [ноутбуке baseline_demo.ipynb](./baseline_demo.ipynb).
+
+Презентация с семинара-демонстрации доступна по [ссылке](https://docs.google.com/presentation/d/1xQw4tB3hFYGhK8MfityR2FoFc1fM33yCAMmPdXADfyM/edit?usp=sharing).
