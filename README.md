@@ -56,11 +56,11 @@ sha256: `6ca5dc27d4928b1cbe6c1959b87a539f1dd9bc1764220c53b6d5e406e8cef310` NCLT_
 
 ### Установка
 
-Базовое решение использует библиотеку [Open Place Recognition](https://github.com/alexmelekhin/open_place_recognition), в которой на текущий момент реализована модель MinkLoc++ и классы для работы с датасетами [Oxford RobotCar](https://robotcar-dataset.robots.ox.ac.uk/), [NCLT](http://robots.engin.umich.edu/nclt/) и **ITLP-Campus**.
+Базовое решение использует библиотеку [Open Place Recognition](https://github.com/alexmelekhin/OpenPlaceRecognition), в которой на текущий момент реализована модель MinkLoc++ и классы для работы с датасетами [Oxford RobotCar](https://robotcar-dataset.robots.ox.ac.uk/), [NCLT](http://robots.engin.umich.edu/nclt/) и **ITLP-Campus**.
 
 Предлагаемые варианты установки зависимостей для работы с кодом:
 - Воспользоваться предложенным [ноутбуком](./baseline_demo.ipynb), в котором продемонстрирован процесс установки зависимостей в Google Colab;
-- Воспользоваться docker-образом и инструкциями из [репозитория библиотеки Open Place Recognition](https://github.com/alexmelekhin/open_place_recognition).
+- Воспользоваться docker-образом и инструкциями из [репозитория библиотеки Open Place Recognition](https://github.com/alexmelekhin/OpenPlaceRecognition).
 - Установить зависимости в свое окружение вручную, воспользовавшись рекомендациями ниже.
 
 #### Ручная установка
@@ -86,10 +86,10 @@ sha256: `6ca5dc27d4928b1cbe6c1959b87a539f1dd9bc1764220c53b6d5e406e8cef310` NCLT_
                           --global-option="--blas=openblas"
    ```
 
-3. Склонируйте и установите [Open Place Recognition](https://github.com/alexmelekhin/open_place_recognition):
+3. Склонируйте и установите [Open Place Recognition](https://github.com/alexmelekhin/OpenPlaceRecognition):
    ```bash
-   git clone https://github.com/alexmelekhin/open_place_recognition
-   cd open_place_recognition
+   git clone https://github.com/alexmelekhin/OpenPlaceRecognition
+   cd OpenPlaceRecognition
    pip install -e .  # флаг -e необходим для возможности редактировать код уже установленной библиотеки
    ```
 
